@@ -1,10 +1,11 @@
 const request = require('request');
+const headers = {
+    'Authorization': 'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx'
+  };
 const businessInfooptions = {
     url: 'https://api.yelp.com/v3/businesses/search?term=icecream&location=atlanta&sort_by=rating&limit=5',
-    headers: {
-      'Authorization': 'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx'
-    }
-  };
+    headers
+};
 // Returns a promise with the Business Search Details   
 function requestBusinessInfo(businessInfooptions){
     return new Promise(function(resolve, reject){
@@ -36,8 +37,7 @@ function getReviewInfoById(id){
     return new Promise(function(resolve, reject){ 
         const revOptions = {
             url: 'https://api.yelp.com/v3/businesses/'+ id + '/reviews',
-            headers: {'Authorization': 'Bearer Y8s6dW3uAs-TZ34YRekghk7llJxJuj3JjNAcLtADi-OZ02Dl66_soagZHv-eTyQFHC8fGWfxblXrZxyW3msB1GARItcv2KG0qhzgowweVi4qxdw3fijzXeIyKKd2XXYx'
-            }
+            headers
         };
         request(revOptions, function (error, response, body) {
             // in addition to parsing the value, deal with possible errors
