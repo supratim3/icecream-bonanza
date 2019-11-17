@@ -1,0 +1,14 @@
+{
+  "name": "icecream-bonanza",
+  "version": "1.0.0",
+  "description": "Hotlanta's best Ice Creams for you",
+  "main": "yelp.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Supratim Dutta",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0"
+  }
+}
