@@ -52,7 +52,7 @@ function getReviewInfoById(id){
         });
     });  
 }
-async function callYelp(businessInfooptions){
+module.exports = async function callYelp(businessInfooptions){
     try{
         const busniessDtlResponse = await requestBusinessInfo(businessInfooptions); //Get Top 5 rated Ice-Cream businesses from ATL
         requestReviewInfoandPrintOutput(busniessDtlResponse.businesses); //Get review and Print Output
@@ -60,4 +60,4 @@ async function callYelp(businessInfooptions){
         console.log(`You are not having icecream today!! ${err}`);
     }
 }
-callYelp(businessInfooptions);
+//callYelp(businessInfooptions);
